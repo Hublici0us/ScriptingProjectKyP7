@@ -39,10 +39,12 @@ public class SingleCharacterScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && myStuff.bullets > 0)
         {
-            Rigidbody bulletInstance = Instantiate(bulletPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
+            Rigidbody bulletInstance = Instantiate(bulletPrefab, firePosition.position, bulletPrefab.rotation) as Rigidbody;
             bulletInstance.AddForce(firePosition.forward * bulletSpeed);
             myStuff.bullets--;
         }
+
+        Debug.Log(myStuff.bullets);
     }
 
     // Update is called once per frame
